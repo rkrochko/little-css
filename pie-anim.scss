@@ -1,0 +1,115 @@
+/* -----------------------------
+	Creates the Pie Shape and animation
+	Used on the DFC Get Enough Helper to create the animated circle/pie chart
+----------------------------- */
+.pieOutline {
+	background: black;
+	width:200px;
+	height:200px;
+	border-radius:50%;
+	overflow:hidden;
+	position:absolute;
+	margin-top:18px; margin-left:18px;
+}
+.pieContainer {
+	position:absolute;
+	height:185px;
+	width:185px;
+	background:#fff;
+  	opacity:0.99;
+  	overflow:hidden;
+  	border-radius:50%;
+  	-webkit-border-radius: 50%;
+    margin-top:29px; margin-left:29px;
+}
+.pieOuter {
+    z-index:100;
+    position: absolute; 
+    height: 135px;
+    width: 100px;
+    overflow: hidden;
+    &.top-right {
+	    margin-top:-43px;
+	    margin-left:92px;
+	    .pieInner {
+		    left: -100px;
+		    top: 38px;
+		    .android & {
+		    	top: 42px;
+				left: -106px;
+	  		}
+		    // .android & {
+		    // 	left: -90px;
+		    // 	top: 37px;
+		    // }
+		    -moz-transform: rotate(-90deg);
+		    -webkit-transform: rotate(-90deg);
+		    .pieHalfMoon {
+		    	// .android & {
+		  			// width: 190px;
+		  			// height: 9px;
+		    	// }
+		    }
+		}
+	}
+	&.top-left {
+	    margin-top:-43px;
+	    margin-left:-8px;
+	    .pieInner {
+		    left: 7px;
+		    top: 40px;
+		    -moz-transform: rotate(-180deg);
+		    -webkit-transform: rotate(-180deg);
+		}
+	}
+	&.bottom-right {
+	    margin-top:92px;
+	    margin-left:94px;
+	    width: 120px;
+	    .pieInner {
+		    left: -105px;
+		    top: -102px;
+		    -moz-transform: rotate(-180deg);
+		    -webkit-transform: rotate(-180deg);
+		    .android & {
+				top: -106px;
+				left: -109px;
+	  		}
+		}
+	}
+	&.bottom-left {
+	    margin-top:92px;
+	    margin-left:-117px;
+	    width: 209px;
+	    .pieInner {
+		    left: 115px;
+		    top: -104px;
+		    -moz-transform: rotate(270deg);
+		    -webkit-transform: rotate(270deg);
+		}
+	}
+}
+.pieInner {
+    position: relative;
+    height: 200px;
+    width: 200px;
+    opacity: 0.5;
+}
+.pieHalfMoon {
+    height:100px;
+    width:200px;
+    background:#ebbb66;
+    position: absolute;
+    clip: rect(0px 200px 200px 0px);
+    &.top{
+	    border-radius: 200px 200px 0 0;
+	    -moz-border-radius: 200px 200px 0 0;
+	    -webkit-border-radius: 200px 200px 0 0;
+	}
+	&.bottom{
+	    border-radius:  0 0 200px 200px;
+	    -moz-border-radius: 0 0 200px 200px;
+	    -webkit-border-radius: 0 0 200px 200px;
+	    top:100px;
+	}
+}
